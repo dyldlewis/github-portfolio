@@ -5,9 +5,11 @@ import { connect } from "react-redux";
 class Portfolio extends React.component
 
 
+render() {
+  return()
+}
 
 
 
 
-
-export connect()(Portfolio);
+export connect(mapStateToProps)(Portfolio);
