@@ -1,15 +1,42 @@
-import react from "react"
+import React from "react"
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { getRepos } from "./../actions";
+import Repo from "./Repo"
 
-class Portfolio extends React.component
+class Portfolio extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log(this.props.masterRepoList)
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.dispatch(getRepos());
+  }
+
+  handleButtonClick() {
+  }
 
 
-render() {
-  return()
+  render() {
+    return(
+      <div>
+       {this.props.masterRepoList.map((repo) =>
+       <Repo
+       repo={repo}
+       key={repo.id}
+       />
+       )}
+   </div>
+    )
+  }
 }
 
+const mapStateToProps = state => {
+  return {
+    masterRepoList : state
+  };
+};
 
-
-
-export connect(mapStateToProps)(Portfolio);
+export default connect(mapStateToProps)(Portfolio);

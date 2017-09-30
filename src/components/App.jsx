@@ -1,10 +1,10 @@
 import React from "react";
+import Portfolio from "./Portfolio";
 
 function App(props){
   return (
     <div>
-      <h3>Get to Coding!</h3>
-      <p><em>Template provided by The Dylan Lewis</em></p>
+      <Portfolio/>
     </div>
   );
 }
