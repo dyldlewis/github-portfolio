@@ -20,8 +20,12 @@ class Portfolio extends React.Component {
 
 
   render() {
+    var display = {
+      textAlign: "center"
+    }
     return(
-      <div>
+      <div style={display}>
+        <h1>My Projects</h1>
        {this.props.masterRepoList.map((repo) =>
        <Repo
        repo={repo}
