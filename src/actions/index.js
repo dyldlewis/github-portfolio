@@ -12,9 +12,7 @@ export const recieveRepos = (repos) => ({
 })
 
 export function getRepos() {
-  console.log("stage_ONE")
   return function (dispatch) {
-    console.log("FunctionFired")
     dispatch(requestRepos());
     return fetch("https://api.github.com/users/dyldlewis/starred").then(
       response => response.json(),
