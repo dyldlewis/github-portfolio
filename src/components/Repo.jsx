@@ -14,7 +14,7 @@ function Repo(props) {
   return(
     <div style={repoStyle}>
       <h1>{props.repo.name}</h1>
-      <a href="{props.repo.url}">View this project</a>
+      <a href={props.repo.url}>View this project</a>
     </div>
   )
 }

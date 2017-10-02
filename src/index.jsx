@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom"
+import { HashRouter } from "react-router-dom"
 import { AppContainer } from "react-hot-loader";
 import reducer from "./reducers/repos";
 import { createStore, applyMiddleware } from "redux";
@@ -23,7 +23,9 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </Provider>,
   document.getElementById("react-app-root")
 );
